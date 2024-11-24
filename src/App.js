@@ -1,23 +1,28 @@
-import logo from './logo.svg';
+import Home from './Home.jsx';
+import React, { useState } from 'react';
+import Whoweare from './Whoweare.jsx';
+import Shop from './Shop.jsx';
+import Basket from './Basket.jsx';
+import Navbar from './Navbar.jsx';
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
 
 function App() {
+  const [cart, setCart] = useState([]);
+
+  const handleAddToCart = (item) => {
+    setCart((prevCart) => [...prevCart, item]); // Add item to cart
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar cart={cart}/>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/whoweare" element={<Whoweare />} />
+        <Route path="/shop" element={<Shop onAddToCart={handleAddToCart} />} />
+        <Route path="/basket" element={<Basket cart={cart} />} />
+      </Routes>
     </div>
   );
 }
