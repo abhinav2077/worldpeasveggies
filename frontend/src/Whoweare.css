@@ -1,0 +1,21 @@
+.whoweare{
+    padding: 50px 50px;
+    display: flex;
+}
+
+.wwa_left{
+    flex: 0.2;
+    font-weight: 700;
+}
+.wwa_right{
+    flex: 1;
+}
+
+@media (max-width: 768px){
+    .whoweare{
+        padding: 50px 40px;
+    }
+    .wwa_right{
+        margin-left: 20px;
+    }
+}

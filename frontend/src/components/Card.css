@@ -1,0 +1,107 @@
+.card{
+    display: flex;
+    flex-direction: column;
+    margin-top: 8vh;
+    margin-bottom: -5vh;
+    border-radius:15px;
+    border: solid 2px rgb(194, 194, 194);
+    height: 430px;
+    width: 300px;
+    background-color: rgb(249, 255, 244);
+    transition: all 0.5s ease;
+}
+.card.alt-style{
+    flex-direction: row;
+    height: 130px;
+    width: 700px;
+}
+.card:hover{
+    box-shadow: 0 0 10px lightgray;
+}
+.card label {
+    font-size: 15px;
+    color: gray;
+}
+.card select {
+    margin-left: 5px;
+    color: gray;
+    font-size: 14px;
+    padding: 2px 5px;
+    border: 1px solid rgb(249, 255, 244);
+    border-radius: 5px;
+    background-color: rgb(249, 255, 244);
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+  }
+  
+  /* Change border color on hover or focus */
+  .card select:hover,
+  .card select:focus {
+    border-color: olivedrab;
+    background-color: olivedrab;
+    color: white;
+  }
+.image{
+    flex: 1.4;
+    border-top-left-radius: 13px;
+    border-top-right-radius: 13px;
+    background-color: lightgray;
+}
+.image.alt-style{
+    flex: 0.4;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 13px;
+}
+.info{
+    display: flex;
+    flex: 0.6;
+    padding-left: 10px;
+}
+.info.alt-style{
+    padding-left: 15px;
+}
+.info-1{
+    flex: 8;
+}
+.atc{
+    flex: 1;
+}
+.atc button{
+    background-color: olivedrab;
+    color: white;
+    font-size: 20px;
+    padding: 5px 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    border-radius: 20px;
+    border: solid;
+    transition: background-color .3s ease;
+}
+.atc button:hover{
+    cursor: pointer;
+    background-color: white;
+    color: olivedrab;
+    border-width: 2px;
+}
+
+.image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    object-fit: cover;
+    overflow: hidden;
+}
+.veg_name{
+    font-weight: 700;
+}
+.price{
+    color: rgb(81, 109, 25);
+    margin-top: -15px;
+    font-weight: 900;
+}
+.location{
+    font-size: 15px;
+    color: gray;
+    margin-top: -5px;
+}

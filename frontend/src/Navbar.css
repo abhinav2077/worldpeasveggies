@@ -1,0 +1,96 @@
+/* Base Navbar */
+.nav {
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    background-color: white;
+    position: relative;
+    z-index: 1000; /* Keep navbar above other content */
+  }
+  
+  .nav p {
+    color: olivedrab;
+    font-size: 30px;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: 800;
+  }
+  
+  /* Links Section */
+  .Rightsection {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .link {
+    text-decoration: none;
+    color: black;
+    transition: 0.3s color ease;
+  }
+  
+  .link:hover {
+    cursor: pointer;
+    color: olivedrab;
+  }
+  
+  .btn {
+    background-color: olivedrab;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.5s ease;
+  }
+  
+  .btn:hover {
+    cursor: pointer;
+    background-color: rgb(86, 115, 29);
+  }
+  
+  /* Hamburger Menu Icon */
+  .hamburger {
+    display: none;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 1100;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .hamburger {
+      display: block; /* Show hamburger icon */
+    }
+  
+    .Rightsection {
+      position: fixed;
+      top: 0;
+      right: 0;
+      flex-direction: column;
+      background-color: white;
+      width: 100%; /* Cover full width */
+      height: 100vh; /* Cover full height */
+      transform: translateY(-100%); /* Hide menu initially */
+      transition: transform 0.3s ease-in-out;
+      z-index: 999; /* Ensure it overlays other content */
+      padding-top: 50px; /* Space for links */
+    }
+  
+    .Rightsection.show-menu {
+      transform: translateY(0); /* Slide menu down into view */
+    }
+  
+    .link {
+      padding: 15px 0;
+      text-align: center;
+      width: 100%;
+      font-size: 18px;
+    }
+  
+    .btn {
+      margin: 10px 0;
+    }
+  }
