@@ -7,6 +7,8 @@ import './Login.css'
 
 function Login() {
 
+    const API_BASE_URL = process.env.REACT_APP_API_URL;
+
     const [loginInfo,setLoginInfo] = useState({
         email: '',
         password: ''
@@ -30,7 +32,7 @@ function Login() {
             return handleError('All fields are required!')
         }
         try{
-            const url = "http://localhost:8080/auth/login";
+            const url = `${API_BASE_URL}/auth/login`;
             const response = await fetch(url,{
                 method:'POST',
                 headers:{

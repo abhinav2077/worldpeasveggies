@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "node index.js"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
@@ -13,5 +13,3 @@
     "mongoose": "^8.8.3"
   }
 }
-
-

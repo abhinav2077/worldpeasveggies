@@ -5,6 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { handleError, handleSuccess } from './Utils'
 
 function Signup() {
+    const API_BASE_URL = process.env.REACT_APP_API_URL;
 
     const [signupInfo,setSignupInfo] = useState({
         name: '',
@@ -30,7 +31,7 @@ function Signup() {
             return handleError('All fields are required!')
         }
         try{
-            const url = "http://localhost:8080/auth/signup";
+            const url = `${API_BASE_URL}/auth/signup`;
             const response = await fetch(url,{
                 method:'POST',
                 headers:{
