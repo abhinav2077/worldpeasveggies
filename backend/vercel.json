@@ -2,9 +2,19 @@
   "version": 2,
   "builds": [
     {
-      "src": "*.js",
+      "src": "index.js",
       "use": "@vercel/node"
     }
   ],
-  "routes": [{ "src": "/(.*)", "dest": "/" }]
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/"
+    }
+  ],
+  "env": {
+    "MONGO_CONN": "mongodb+srv://abhinavjayalwaal:aSdFgHjKl987654321@cluster0.g0lzn.mongodb.net/auth-db?retryWrites=true&w=majority&appName=Cluster0",
+    "JWT_SECRET": "secret-123",
+    "PORT": "8080"
+  }
 }
