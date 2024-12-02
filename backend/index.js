@@ -5,9 +5,9 @@ const cors = require('cors');
 const AuthRouter = require('./Routes/AuthRouter');
 const ProductRouter = require('./Routes/ProductRouter');
 const corsConfig = {
-    origin : "*",
-    credential : true,
-    methods:["GET","POST","PUT","DELETE"],
+  origin: "https://worldpeasveggies-ltxw.vercel.app", // Frontend origin
+  credentials: true, // Allow cookies and credentials
+  methods: ["GET", "POST", "PUT", "DELETE"], // Allowed HTTP methods
 };
 
 require('dotenv').config();
