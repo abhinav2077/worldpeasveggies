@@ -16,24 +16,21 @@ function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const location = useLocation();
 
-  // Handle adding items to the cart
+
   const handleAddToCart = (item) => {
     setCart((prevCart) => {
       const existingItem = prevCart.find((cartItem) => cartItem.vegname === item.vegname);
       if (existingItem) {
-        // Update quantity if item already exists in cart
         return prevCart.map((cartItem) =>
           cartItem.vegname === item.vegname
             ? { ...cartItem, quantity: cartItem.quantity + item.quantity }
             : cartItem
         );
       }
-      // Add new item to the cart
       return [...prevCart, item];
     });
   };
 
-  // Handle removing items from the cart
   const handleRemoveFromCart = (item) => {
     setCart((prevCart) =>
       prevCart
@@ -42,11 +39,10 @@ function App() {
             ? { ...cartItem, quantity: cartItem.quantity - 1 }
             : cartItem
         )
-        .filter((cartItem) => cartItem.quantity > 0) // Remove items with 0 quantity
+        .filter((cartItem) => cartItem.quantity > 0) 
     );
   };
 
-  // Protect private routes
   const PrivateRoute = ({ element }) => {
     return isAuthenticated ? element : <Navigate to="/login" />;
   };
