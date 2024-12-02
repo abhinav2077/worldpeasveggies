@@ -12,6 +12,14 @@ const corsConfig = {
 
 require('dotenv').config();
 require('./Models/db')
+app.use(cors(corsConfig));
+
+app.options("*", cors(corsConfig)); // Handle preflight requests globally
+
+app.post("/auth/login", (req, res) => {
+  // Ensure no redirect occurs here
+  res.json({ success: true, message: "Login successful" });
+});
 
 
 const PORT = process.env.PORT || 8080;
