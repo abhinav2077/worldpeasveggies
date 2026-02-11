@@ -4,7 +4,7 @@
     margin-top: 8vh;
     margin-bottom: -5vh;
     border-radius:15px;
-    border: solid 2px rgb(194, 194, 194);
+    border: solid 1.5px rgb(0, 0, 0);
     height: 430px;
     width: 300px;
     background-color: rgb(249, 255, 244);
@@ -104,4 +104,5 @@
     font-size: 15px;
     color: gray;
     margin-top: -5px;
+
 }
